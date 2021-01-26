@@ -2,12 +2,10 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'App',
+  name: 'Home',
 });
 </script>
 
 <template>
-  <component :is="this.$route.meta.layout">
-    <router-view />
-  </component>
+  <h1>Home Page</h1>
 </template>
