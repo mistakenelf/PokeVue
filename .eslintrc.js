@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  parser: '@typescript-eslint/parser',
   env: {
     browser: true,
   },
@@ -10,9 +11,14 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:vue/vue3-recommended',
     '@vue/prettier',
-    '@vue/typescript',
+    'plugin:vue/essential',
+    '@vue/typescript/recommended',
+    'plugin:import/typescript',
   ],
   plugins: ['import'],
+  parserOptions: {
+    ecmaVersion: '2020',
+  },
   rules: {
     'import/order': ['warn', { 'newlines-between': 'always' }],
     'newline-before-return': 'warn',

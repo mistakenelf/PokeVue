@@ -1,5 +1,5 @@
 {
-  "name": "vue3-lnl",
+  "name": "pokevue",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -8,23 +8,26 @@
     "eslint": "eslint ./src/**/**/**/**/* --fix"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "vue": "^3.0.5",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.14.1",
-    "@typescript-eslint/parser": "^4.14.1",
-    "@vitejs/plugin-vue": "^1.1.2",
+    "@types/node": "^14.14.25",
+    "@typescript-eslint/eslint-plugin": "^4.14.2",
+    "@typescript-eslint/parser": "^4.14.2",
+    "@vitejs/plugin-vue": "^1.1.4",
     "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-typescript": "^7.0.0",
     "@vuedx/typecheck": "^0.6.3",
     "@vuedx/typescript-plugin-vue": "^0.6.3",
-    "eslint": "^7.18.0",
+    "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier-vue": "^2.1.1",
     "eslint-plugin-vue": "^7.5.0",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3",
-    "vite": "^2.0.0-beta.49"
+    "vite": "^2.0.0-beta.64"
   }
 }
