@@ -1,2 +1,3 @@
-# vue3-lnl
-Vue 3 Intro Lunch and Learn
+# PokeVue
+
+- Introduction to Vue 3 with pokemon
