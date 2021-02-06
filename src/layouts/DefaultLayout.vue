@@ -14,24 +14,9 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
-.nav {
-  background: #000;
-  width: 100%;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header {
-  color: #fff;
-}
-</style>
-
 <template>
-  <nav class="nav">
-    <h1 class="header">PokeVue</h1>
+  <nav class="bg-black w-full h-16 flex items-center justify-center">
+    <h1 class="text-white text-2xl font-bold">PokeVue</h1>
   </nav>
   <slot />
 </template>
