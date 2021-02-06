@@ -15,7 +15,9 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="flex flex-col rounded-lg items-center bg-white shadow-lg">
+  <div
+    class="flex flex-col rounded-lg items-center bg-pokemon-yellow shadow-lg"
+  >
     <div class="text-2xl font-bold uppercase text-gray-700">
       {{ name }}
     </div>

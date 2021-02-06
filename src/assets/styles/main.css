@@ -11,7 +11,8 @@ main {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: #e5e5e5;
+  background: #2a75bb;
+  font-family: 'Press Start 2P', cursive;
 }
 
 h1,
