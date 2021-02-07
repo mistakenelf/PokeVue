@@ -3,6 +3,11 @@ interface PokemonListResults {
   url: string;
 }
 
+interface Sprites {
+  front_default: string;
+  back_default: string;
+}
+
 export interface PokemonList {
   count: number;
   next?: string;
@@ -11,7 +16,9 @@ export interface PokemonList {
 }
 
 export interface PokemonDetails {
+  id: string;
   name: string;
   url: string;
   order: number;
+  sprites: Sprites;
 }
