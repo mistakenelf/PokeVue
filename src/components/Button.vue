@@ -1,16 +1,12 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
   name: 'Button',
   props: {
     type: {
-      type: String,
+      type: String as PropType<'button' | 'submit' | 'reset'>,
       default: 'button',
-    },
-    onClick: {
-      type: Function,
-      required: true,
     },
   },
 });
@@ -18,6 +14,7 @@ export default defineComponent({
 
 <template>
   <button
+    @click="$emit('click')"
     :type="type"
     class="bg-red-600 text-white px-4 py-2 rounded border-4 border-black"
   >
