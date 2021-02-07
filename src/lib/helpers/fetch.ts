@@ -25,16 +25,18 @@ const handleResponse = (response: Response) => {
   }
 };
 
-export const getRequest = <T>(url: string): Promise<T> => {
+export const getRequest = async <T>(url: string): Promise<T> => {
   const headers = new Headers({
     'Content-Type': 'application/json',
     pragma: 'no-cache',
   });
 
-  return fetch(`${url}`, { headers }).then(handleResponse);
+  const res = await fetch(`${url}`, { headers });
+
+  return handleResponse(res);
 };
 
-export const postRequest = <T>(
+export const postRequest = async <T>(
   url: string,
   data: Record<string, any>,
 ): Promise<T> => {
@@ -42,14 +44,16 @@ export const postRequest = <T>(
     'Content-Type': 'application/json',
   });
 
-  return fetch(`${url}`, {
+  const res = await fetch(`${url}`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers,
-  }).then(handleResponse);
+  });
+
+  return handleResponse(res);
 };
 
-export const putRequest = <T>(
+export const putRequest = async <T>(
   url: string,
   data: Record<string, any>,
 ): Promise<T> => {
@@ -57,18 +61,22 @@ export const putRequest = <T>(
     'Content-Type': 'application/json',
   });
 
-  return fetch(`${url}`, {
+  const res = await fetch(`${url}`, {
     method: 'PUT',
     body: JSON.stringify(data),
     headers,
-  }).then(handleResponse);
+  });
+
+  return handleResponse(res);
 };
 
-export const deleteRequest = <T>(url: string): Promise<T> => {
+export const deleteRequest = async <T>(url: string): Promise<T> => {
   const headers = new Headers({
     'Content-Type': 'application/json',
     pragma: 'no-cache',
   });
 
-  return fetch(`${url}`, { method: 'DELETE', headers }).then(handleResponse);
+  const res = await fetch(`${url}`, { method: 'DELETE', headers });
+
+  return handleResponse(res);
 };
