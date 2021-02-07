@@ -14,7 +14,7 @@ export default defineComponent({
 
 <template>
   <button
-    @click="$emit('click')"
+    @click="$emit('handleClick')"
     :type="type"
     class="bg-red-600 text-white px-4 py-2 rounded border-4 border-black"
   >

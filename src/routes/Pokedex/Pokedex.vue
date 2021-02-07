@@ -71,7 +71,7 @@ export default defineComponent({
         <PokemonCard :name="p.name" :frontImage="p.sprites.front_default" />
       </div>
     </div>
-    <Button @click="loadMore">Load More</Button>
+    <Button @handleClick="loadMore">Load More</Button>
   </div>
   <div v-else>No pokemon found</div>
 </template>
