@@ -22,3 +22,10 @@ export interface PokemonDetails {
   order: number;
   sprites: Sprites;
 }
+
+export interface Pokemon {
+  count: number;
+  next?: string;
+  previous?: string;
+  pokemon: PokemonDetails[];
+}
