@@ -41,10 +41,10 @@ export default defineComponent({
     class="flex flex-col items-center rounded-lg bg-pokemon-yellow shadow-lg"
   >
     <div class="flex flex-row items-center justify-between w-full px-2 pt-2">
-      <div class="text-lg md:text-2xl font-bold uppercase text-pokemon-red">
+      <div class="text-lg font-bold uppercase text-pokemon-red">
         {{ name }}
       </div>
-      <div class="text-lg md:text-2xl flex items-center">
+      <div class="text-lg flex items-center">
         <span class="text-sm uppercase pr-2">Hp</span>{{ hp }}
       </div>
     </div>
