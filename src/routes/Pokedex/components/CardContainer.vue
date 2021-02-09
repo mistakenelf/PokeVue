@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="m-6 grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
+  <div class="p-4 grid grid-flow-row md:grid-cols-2 lg:grid-cols-3 gap-4">
     <slot />
   </div>
 </template>
