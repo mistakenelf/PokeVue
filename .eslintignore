@@ -1,4 +1,3 @@
 node_modules/
 dist/
-server.js
-prerender.js
+.eslintrc.js

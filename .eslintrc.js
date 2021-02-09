@@ -1,24 +1,22 @@
 module.exports = {
   root: true,
-  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: '2020',
+    parser: '@typescript-eslint/parser',
+  },
   env: {
     browser: true,
   },
   extends: [
-    'prettier',
+    'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
-    'plugin:prettier/recommended',
     'plugin:vue/vue3-recommended',
-    '@vue/prettier',
-    'plugin:vue/essential',
-    '@vue/typescript/recommended',
+    'prettier',
+    'prettier/vue',
+    'prettier/@typescript-eslint',
     'plugin:import/typescript',
   ],
-  plugins: ['import'],
-  parserOptions: {
-    ecmaVersion: '2020',
-  },
+  plugins: ['import', 'vue'],
   rules: {
     'import/order': ['warn', { 'newlines-between': 'always' }],
     'newline-before-return': 'warn',

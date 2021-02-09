@@ -1,5 +1,5 @@
 import { getRequest } from '../helpers/fetch';
-import { PokemonList, PokemonDetails } from '../../models/Pokemon';
+import { PokemonDetails } from '../../models/Pokemon';
 
 const getPokemonDetails = async (url: string) => {
   const res = await getRequest<PokemonDetails>(url);
@@ -7,10 +7,22 @@ const getPokemonDetails = async (url: string) => {
   return res;
 };
 
-export const getPokemonList = async (
+interface PokemonListResults {
+  name: string;
+  url: string;
+}
+
+export interface PokemonListResponse {
+  count: number;
+  next?: string;
+  previous?: string;
+  results: PokemonListResults[];
+}
+
+const getPokemon = async (
   url = 'https://pokeapi.co/api/v2/pokemon?limit=20',
 ) => {
-  const res = await getRequest<PokemonList>(url);
+  const res = await getRequest<PokemonListResponse>(url);
   const pokemonPromises = res.results.map((p) => getPokemonDetails(p.url));
   const pokemonDetails = await Promise.all(pokemonPromises);
 
@@ -18,6 +30,10 @@ export const getPokemonList = async (
     count: res.count,
     next: res.next,
     previous: res.previous,
-    pokemon: [...pokemonDetails],
+    results: [...pokemonDetails],
   };
+};
+
+export default {
+  getPokemon,
 };

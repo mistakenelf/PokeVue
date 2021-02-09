@@ -1,18 +1,14 @@
-interface PokemonListResults {
-  name: string;
-  url: string;
-}
-
 interface Sprites {
   front_default: string;
   back_default: string;
 }
 
-export interface PokemonList {
-  count: number;
-  next?: string;
-  previous?: string;
-  results: PokemonListResults[];
+interface Stats {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+  };
 }
 
 export interface PokemonDetails {
@@ -21,11 +17,12 @@ export interface PokemonDetails {
   url: string;
   order: number;
   sprites: Sprites;
+  stats: Stats[];
 }
 
 export interface Pokemon {
   count: number;
   next?: string;
   previous?: string;
-  pokemon: PokemonDetails[];
+  results: PokemonDetails[];
 }
