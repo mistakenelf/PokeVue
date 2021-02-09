@@ -8,7 +8,7 @@ export default defineComponent({
       type: String as PropType<'button' | 'submit' | 'reset'>,
       default: 'button',
     },
-    click: {
+    onClick: {
       type: Function as PropType<() => void>,
       default: () => null,
     },

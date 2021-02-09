@@ -70,7 +70,10 @@ export default defineComponent({
 
 <template>
   <Spinner v-if="loading" is-overlay />
-  <div v-else-if="pokemon.results.length > 0 && !loading" class="pb-8">
+  <div
+    v-else-if="pokemon.results.length > 0 && !loading"
+    class="pb-8 text-center"
+  >
     <CardContainer>
       <div v-for="p in pokemon.results" :key="p.id">
         <PokemonCard
