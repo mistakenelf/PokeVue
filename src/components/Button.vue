@@ -27,7 +27,7 @@ export default defineComponent({
     class="bg-pokemon-red text-white px-4 py-2 rounded border-4 border-black"
     @click="$emit('click')"
   >
-    <slot v-if="!loading" />
-    <p v-else>loading...</p>
+    <span v-if="loading">Loading...</span>
+    <span v-else><slot /></span>
   </button>
 </template>
