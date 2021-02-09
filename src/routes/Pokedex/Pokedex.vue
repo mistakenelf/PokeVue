@@ -3,12 +3,12 @@ import { defineComponent, onMounted, reactive, toRefs } from 'vue';
 
 import pokemonApi from '../../lib/api/pokemonApi';
 import Spinner from '../../components/Spinner.vue';
-import PokemonCard from '../../components/PokemonCard.vue';
 import { Pokemon } from '../../models/Pokemon';
 import Button from '../../components/Button.vue';
 import NoResults from '../../components/NoResults.vue';
 
 import CardContainer from './components/CardContainer.vue';
+import PokemonCard from './components/PokemonCard.vue';
 
 interface PokedexState {
   pokemon: Pokemon;
