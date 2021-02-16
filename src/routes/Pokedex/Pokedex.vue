@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent, onMounted, reactive, toRefs } from 'vue';
+import { computed, defineComponent, onMounted, reactive, toRefs } from 'vue';
 
 import pokemonApi from '../../lib/api/pokemonApi';
 import Spinner from '../../components/Spinner.vue';
@@ -37,6 +37,8 @@ export default defineComponent({
       loadingMore: false,
     });
 
+    const currentlyVisible = computed(() => state.pokemon.results.length);
+
     const fetchPokemon = async () => {
       state.loading = true;
 
@@ -63,6 +65,7 @@ export default defineComponent({
     return {
       ...toRefs(state),
       loadMore,
+      currentlyVisible,
     };
   },
 });
@@ -70,10 +73,10 @@ export default defineComponent({
 
 <template>
   <Spinner v-if="loading" is-overlay />
-  <div
-    v-else-if="pokemon.results.length > 0 && !loading"
-    class="pb-8 text-center"
-  >
+  <div v-else-if="currentlyVisible > 0 && !loading" class="pb-8 text-center">
+    <p class="mt-2">
+      Viewing {{ currentlyVisible }} of {{ pokemon.count }} results
+    </p>
     <CardContainer>
       <div v-for="p in pokemon.results" :key="p.id">
         <PokemonCard
