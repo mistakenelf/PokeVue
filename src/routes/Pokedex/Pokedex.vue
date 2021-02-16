@@ -74,9 +74,6 @@ export default defineComponent({
 <template>
   <Spinner v-if="loading" is-overlay />
   <div v-else-if="currentlyVisible > 0 && !loading" class="pb-8 text-center">
-    <p class="mt-2">
-      Viewing {{ currentlyVisible }} of {{ pokemon.count }} results
-    </p>
     <CardContainer>
       <div v-for="p in pokemon.results" :key="p.id">
         <PokemonCard
@@ -87,6 +84,9 @@ export default defineComponent({
         />
       </div>
     </CardContainer>
+    <p class="my-4">
+      Viewing {{ currentlyVisible }} of {{ pokemon.count }} results
+    </p>
     <Button :loading="loadingMore" @click="loadMore">Load More</Button>
   </div>
   <NoResults v-else />
