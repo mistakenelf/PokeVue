@@ -7,7 +7,7 @@ import Pokedex from './Pokedex/Pokedex.vue';
 
 const routerHistory = createWebHistory();
 
-const router = createRouter({
+export const router = createRouter({
   history: routerHistory,
   routes: [
     {
@@ -20,5 +20,3 @@ const router = createRouter({
     },
   ],
 });
-
-export { router };
